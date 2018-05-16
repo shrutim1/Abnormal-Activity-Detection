@@ -2,20 +2,10 @@
 import sys
 import os
 import boto3
-ACCESS_ID ='AKIAJBSMOO4G4E2XTYFA'
-ACCESS_KEY ='4ywlGXIh7ODN+XnBA4IxpAyjh2xHToa3lN27ppxe'
+ACCESS_ID ='xxxx'
+ACCESS_KEY ='xxxx'
 s3 = boto3.resource('s3',aws_access_key_id=ACCESS_ID,aws_secret_access_key=ACCESS_KEY)
 bucket = s3.Bucket('fyprojj')
-#bucket_name = sys.argv[1]
-#object_name = sys.argv[2]
-
-#try:
-  #k = boto3.s3.key.Key(bucket)
-  
-  #k.key = destpath
-  #k.set_contents_from_filename(sourcepath,
-#cb=percent_cb, num_cb=10)
-
 try:
     bucket.upload_file('abc','t.png')
     object_acl = s3.ObjectAcl('fyprojj','t.png')
